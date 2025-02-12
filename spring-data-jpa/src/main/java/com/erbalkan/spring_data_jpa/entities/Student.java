@@ -2,6 +2,9 @@ package com.erbalkan.spring_data_jpa.entities;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -38,6 +41,8 @@ public class Student {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
+    @DateTimeFormat(iso = ISO.DATE)
+    // DatetimeFormat anotasyonu ile tarih formatımızı belirttik.
     @Column(name = "birth_of_date", nullable = true)
     private Date birthOfDate;
 }
